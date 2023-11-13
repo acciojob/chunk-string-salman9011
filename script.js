@@ -1,8 +1,18 @@
 function stringChop(str, size) {
-  // your code here
-}
+  // Check if the input string is null or empty
+  if (str === null || str === "") {
+    return [];
+  }
 
-// Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+  // Initialize an empty array to store chunks
+  const chunks = [];
+
+  // Loop through the input string with the specified chunk size
+  for (let i = 0; i < str.length; i += size) {
+    // Get a chunk of the input string and push it to the array
+    chunks.push(str.slice(i, i + size));
+  }
+
+  // Return the array of chunks
+  return chunks;
+}
